@@ -1,0 +1,37 @@
+{
+  "modelName": "环亚无码",
+  "modelUrl": "https:\/\/api.gtvbb0x.com",
+  "modelVersion": "19.10.18",
+  "requestCharset": "utf-8",
+  "resultCharset": "utf-8",
+  "ruleResult": "\\{\"id\":[\\s\\S]*?content\":\"\"\\}",
+  "ruleResultCover": "pic\":\"(.*?)\"",
+  "ruleResultTitle": "title\":\"(.*?)\"",
+  "ruleResultLinkHeader": "https:\/\/api.gtvbb0x.com\/Videos\/Get?vid=",
+  "ruleResultLink": "\"id\":\"(.*?)\"",
+  "ruleResultDate": "hits\":\"(.*?)\"",
+  "hasDetailPage": true,
+  "parseModel": "{\"ruleFull\":\"vurl\\\":\\\".*?\\\"\",\"ruleUrl\":\"vurl\\\":\\\"(.*?)\\\"\"}",
+  "tabModels": [
+    {
+      "title": "乱伦无码",
+      "url": "\/videos\/GetVideoList?cvid=2&page=%page&pagesize=20"
+    },
+    {
+      "title": "强奸无码",
+      "url": "\/videos\/GetVideoList?cvid=3&page=%page&pagesize=20"
+    },
+    {
+      "title": "人妻无码",
+      "url": "\/videos\/GetVideoList?cvid=4&page=%page&pagesize=20"
+    },
+    {
+      "title": "制服无码",
+      "url": "\/videos\/GetVideoList?cvid=5&page=%page&pagesize=20"
+    },
+    {
+      "title": "巨乳无码",
+      "url": "\/videos\/GetVideoList?cvid=12&page=%page&pagesize=20"
+    }
+  ]
+}

@@ -55,10 +55,13 @@ public class WebHunter {
         Log.e(TAG, "start: " + url);
         new MutiRequest().setUrl(url).setCharset(hunterModel.getResultCharset()).setCallBack(new MutiRequest.OnRequestFinishListener() {
             @Override
-            public void onRequestFinish(boolean status, String response) {
-                if (status) {
-                    parse(response);
-                }
+            public void onRequestFinish(boolean status, final String response) {
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            parse(response);
+                        }
+                    }).start();
             }
         }).start();
     }
@@ -73,7 +76,7 @@ public class WebHunter {
                 resultModel.setResultTitle(matchString(result, hunterModel.getRuleResultTitle()));
             }
             if (!TextUtils.isEmpty(hunterModel.getRuleResultCover())) {
-                String cover = matchString(result, hunterModel.getRuleResultCover()).replaceAll("\\s", "%20");
+                String cover = matchString(result, hunterModel.getRuleResultCover()).replaceAll("\\\\","").replaceAll("\\s", "%20");
                 resultModel.setResultCover(TextUtils.isEmpty(hunterModel.getRuleResultCoverHeader()) ? cover : hunterModel.getRuleResultCoverHeader() + cover);
             }
             if (!TextUtils.isEmpty(hunterModel.getRuleResultLink())) {

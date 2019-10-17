@@ -34,9 +34,14 @@ public class WebParser {
         Log.e(TAG, "start: " + url);
         new MutiRequest().setUrl(url).setCallBack(new MutiRequest.OnRequestFinishListener() {
             @Override
-            public void onRequestFinish(boolean status, String response) {
+            public void onRequestFinish(boolean status, final String response) {
                 Log.e(TAG, "onRequestFinish: " + status);
-                parseUrl(response);
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        parseUrl(response);
+                    }
+                }).start();
                 Log.e(TAG, "onRequestFinish: "+status);
             }
         }).start();
@@ -79,7 +84,7 @@ public class WebParser {
                 resultModel.setTitle(matchString(full, parseUrlModel.getRuleTitle()));
             }
             if (!TextUtils.isEmpty(parseUrlModel.getRuleUrl())) {
-                resultModel.setUrl(matchString(full, parseUrlModel.getRuleUrl()));
+                resultModel.setUrl(matchString(full, parseUrlModel.getRuleUrl()).replaceAll("\\\\",""));
             }
             resultModels.add(resultModel);
         }

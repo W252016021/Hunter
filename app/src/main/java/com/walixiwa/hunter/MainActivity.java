@@ -50,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mTextViewJson.setText(getModel2().toJson());
-                Log.e(TAG, "onClick: " + getModel2().toJson());
+                mTextViewJson.setText(getModel3().toJson());
+                Log.e(TAG, "onClick: " + getModel3().toJson());
 
-                BaseWebHunterModel hunterModel = new BaseWebHunterModel(getModel2().toJson());
+                BaseWebHunterModel hunterModel = new BaseWebHunterModel(getModel3().toJson());
                 new WebHunter().init(hunterModel).setCallBack(new WebHunter.CallBack() {
                     @Override
                     public void callBack(BaseWebHunterModel h, List<BaseWebResultModel> resultModels) {
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.e(TAG, "callBack: " + resultModels.get(i).getResultCover().toString());
                         }
                     }
-                }).with(1, 0).start();
+                }).with(2, 0).start();
             }
         });
     }
@@ -154,23 +154,53 @@ public class MainActivity extends AppCompatActivity {
         model.setHasDetailPage(true);
 
         BaseParseUrlModel baseParseUrlModel = new BaseParseUrlModel();
-        baseParseUrlModel.setRuleFull("\"playurls\":\\[\\[\".*?\",\".*?\",\".*?\"\\]\\]\\}");
-        baseParseUrlModel.setRuleUrl("(http:.*?.m3u8)");
+        baseParseUrlModel.setRuleFull("var url = '.*?'");
+        baseParseUrlModel.setRuleUrl("var url = '(.*?)'");
         model.setBaseParseUrlModel(baseParseUrlModel);
 
         model.setTabModels(Arrays.asList(
-                new TabModel("日韩女优", "/vodlist/5%first/%page.html","-"),
-                new TabModel("欧美激情", "/vodlist/6%first/%page.html","-"),
-                new TabModel("偷拍自拍", "/vodlist/4%first/%page.html","-"),
-                new TabModel("成人动漫", "/vodlist/8%first/%page.html","-"),
-                new TabModel("经典三级", "/vodlist/7%first/%page.html","-"),
-                new TabModel("强奸乱伦", "/vodlist/9%first/%page.html","-"),
-                new TabModel("变态另类", "/vodlist/10%first/%page.html","-"),
-                new TabModel("制服丝袜", "/vodlist/11%first/%page.html","-"),
-                new TabModel("激情3P", "/vodlist/12%first/%page.html","-"),
-                new TabModel("中文字幕", "/vodlist/31%first/%page.html","-")
+                new TabModel("日韩女优", "/vodlist/5%first/%page.html", "-"),
+                new TabModel("欧美激情", "/vodlist/6%first/%page.html", "-"),
+                new TabModel("偷拍自拍", "/vodlist/4%first/%page.html", "-"),
+                new TabModel("成人动漫", "/vodlist/8%first/%page.html", "-"),
+                new TabModel("经典三级", "/vodlist/7%first/%page.html", "-"),
+                new TabModel("强奸乱伦", "/vodlist/9%first/%page.html", "-"),
+                new TabModel("变态另类", "/vodlist/10%first/%page.html", "-"),
+                new TabModel("制服丝袜", "/vodlist/11%first/%page.html", "-"),
+                new TabModel("激情3P", "/vodlist/12%first/%page.html", "-"),
+                new TabModel("中文字幕", "/vodlist/31%first/%page.html", "-")
                 )
         );
+        return model;
+    }
+
+    private BaseWebHunterModel getModel3() {
+        BaseWebHunterModel model = new BaseWebHunterModel();
+        model.setModelName("环亚无码");
+        model.setModelUrl("https://api.gtvbb0x.com");
+        model.setModelVersion("19.10.18");
+        model.setRequestCharset("utf-8");
+        model.setResultCharset("utf-8");
+        model.setRuleResult("\\{\"id\":[\\s\\S]*?content\":\"\"\\}");
+        model.setRuleResultCover("pic\":\"(.*?)\"");
+        model.setRuleResultLinkHeader("https://api.gtvbb0x.com/Videos/Get?vid=");
+        model.setRuleResultLink("\"id\":\"(.*?)\"");
+        model.setRuleResultTitle("title\":\"(.*?)\"");
+        model.setRuleResultDate("hits\":\"(.*?)\"");
+        model.setHasDetailPage(true);
+
+        BaseParseUrlModel baseParseUrlModel = new BaseParseUrlModel();
+        baseParseUrlModel.setRuleFull("vurl\":\".*?\"");
+        baseParseUrlModel.setRuleUrl("vurl\":\"(.*?)\"");
+        model.setBaseParseUrlModel(baseParseUrlModel);
+
+        model.setTabModels(Arrays.asList(
+                new TabModel("乱伦无码", "/videos/GetVideoList?cvid=2&page=%page&pagesize=20"),
+                new TabModel("强奸无码", "/videos/GetVideoList?cvid=3&page=%page&pagesize=20"),
+                new TabModel("人妻无码", "/videos/GetVideoList?cvid=4&page=%page&pagesize=20"),
+                new TabModel("制服无码", "/videos/GetVideoList?cvid=5&page=%page&pagesize=20"),
+                new TabModel("巨乳无码", "/videos/GetVideoList?cvid=12&page=%page&pagesize=20")
+        ));
         return model;
     }
 

@@ -11,7 +11,7 @@
   "ruleResultLink": "href=\"(.*?)\"",
   "ruleResultDate": "(\\d{4}-\\d{2}-\\d{2})",
   "hasDetailPage": true,
-  "parseModel": "{\"ruleFull\":\"\\\"playurls\\\":\\\\[\\\\[\\\".*?\\\",\\\".*?\\\",\\\".*?\\\"\\\\]\\\\]\\\\}\",\"ruleUrl\":\"(http:.*?.m3u8)\"}",
+  "parseModel": "{\"ruleFull\":\"var url = '.*?'\",\"ruleUrl\":\"var url = '(.*?)'\"}",
   "tabModels": [
     {
       "title": "日韩女优",
