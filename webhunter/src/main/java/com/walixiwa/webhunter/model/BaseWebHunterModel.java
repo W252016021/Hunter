@@ -216,6 +216,9 @@ public class BaseWebHunterModel implements Serializable {
             if (jsonObject.has("ruleResultCover")) {
                 this.ruleResultCover = jsonObject.getString("ruleResultCover");
             }
+            if (jsonObject.has("ruleResultLinkHeader")) {
+                this.ruleResultLinkHeader = jsonObject.getString("ruleResultLinkHeader");
+            }
             if (jsonObject.has("ruleResultLink")) {
                 this.ruleResultLink = jsonObject.getString("ruleResultLink");
             }
@@ -272,7 +275,7 @@ public class BaseWebHunterModel implements Serializable {
                 jsonObject.put("ruleResultCover", this.ruleResultCover);
             }
             if (!TextUtils.isEmpty(ruleResultTitle)) {
-                jsonObject.put("ruleResultDate", this.ruleResultTitle);
+                jsonObject.put("ruleResultTitle", this.ruleResultTitle);
             }
             if (!TextUtils.isEmpty(ruleResultLinkHeader)) {
                 jsonObject.put("ruleResultLinkHeader", this.ruleResultLinkHeader);
