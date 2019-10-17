@@ -1,6 +1,8 @@
 package com.walixiwa.webhunter.model;
 
-public class TabModel {
+import java.io.Serializable;
+
+public class TabModel implements Serializable {
     private String tabTitle;
     private String tabUrl;
     private String first;
