@@ -128,7 +128,7 @@ public class WebHunter {
         while (matcher.find()) {
             result = matcher.group(1);
         }
-        return result == null ? "" : result.replaceAll("<.*?>", "").trim();
+        return WebTool.decodeUnicode(result == null ? "" : result.replaceAll("<.*?>", "").trim());
     }
 
     private CallBack callBack;

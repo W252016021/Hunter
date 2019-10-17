@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void callBack(BaseWebHunterModel h, List<BaseWebResultModel> resultModels) {
                         for (int i = 0; i < resultModels.size(); i++) {
-                            Log.e(TAG, "callBack: " + resultModels.get(i).getResultCover().toString());
+                            Log.e(TAG, "callBack: " + resultModels.get(i).toString());
                         }
                     }
                 }).with(2, 0).start();
