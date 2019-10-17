@@ -58,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void callBack(BaseWebHunterModel h, List<BaseWebResultModel> resultModels) {
                         for (int i = 0; i < resultModels.size(); i++) {
-                            Log.e(TAG, "callBack: " + resultModels.get(i).toString());
+                            Log.e(TAG, "callBack: " + resultModels.get(i).getResultCover().toString());
                         }
                     }
-                }).with(1, 2).start();
+                }).with(1, 0).start();
             }
         });
     }
@@ -168,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
                 new TabModel("变态另类", "/vodlist/10%first/%page.html","-"),
                 new TabModel("制服丝袜", "/vodlist/11%first/%page.html","-"),
                 new TabModel("激情3P", "/vodlist/12%first/%page.html","-"),
-                new TabModel("中文字幕", "/vodlist/31%firs/t%page.html","-")
+                new TabModel("中文字幕", "/vodlist/31%first/%page.html","-")
                 )
         );
         return model;

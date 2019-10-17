@@ -73,7 +73,7 @@ public class WebHunter {
                 resultModel.setResultTitle(matchString(result, hunterModel.getRuleResultTitle()));
             }
             if (!TextUtils.isEmpty(hunterModel.getRuleResultCover())) {
-                String cover = matchString(result, hunterModel.getRuleResultCover());
+                String cover = matchString(result, hunterModel.getRuleResultCover()).replaceAll("\\s", "%20");
                 resultModel.setResultCover(TextUtils.isEmpty(hunterModel.getRuleResultCoverHeader()) ? cover : hunterModel.getRuleResultCoverHeader() + cover);
             }
             if (!TextUtils.isEmpty(hunterModel.getRuleResultLink())) {
@@ -125,7 +125,7 @@ public class WebHunter {
         while (matcher.find()) {
             result = matcher.group(1);
         }
-        return result == null ? "" : result.replaceAll("<.*?>", "").replaceAll("\\s", "").replace(" ", "%20").trim();
+        return result == null ? "" : result.replaceAll("<.*?>", "").trim();
     }
 
     private CallBack callBack;
