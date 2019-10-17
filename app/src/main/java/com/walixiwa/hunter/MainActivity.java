@@ -50,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mTextViewJson.setText(getModel().toJson());
-                Log.e(TAG, "onClick: " + getModel().toJson());
+                mTextViewJson.setText(getModel2().toJson());
+                Log.e(TAG, "onClick: " + getModel2().toJson());
 
-                BaseWebHunterModel hunterModel = new BaseWebHunterModel(readAssetsTxt(getApplicationContext(),"json/avtb.json"));
+                BaseWebHunterModel hunterModel = new BaseWebHunterModel(getModel2().toJson());
                 new WebHunter().init(hunterModel).setCallBack(new WebHunter.CallBack() {
                     @Override
                     public void callBack(BaseWebHunterModel h, List<BaseWebResultModel> resultModels) {
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                             Log.e(TAG, "callBack: " + resultModels.get(i).toString());
                         }
                     }
-                }).with(3, 2).start();
+                }).with(1, 2).start();
             }
         });
     }
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     private BaseWebHunterModel getModel() {
         BaseWebHunterModel model = new BaseWebHunterModel();
-        model.setModelName("测试001");
+        model.setModelName("AV淘宝");
         model.setModelUrl("http://www.avtb0055.com");
         model.setModelVersion("19.10.15");
         model.setRequestCharset("utf-8");
@@ -140,37 +140,41 @@ public class MainActivity extends AppCompatActivity {
 
     private BaseWebHunterModel getModel2() {
         BaseWebHunterModel model = new BaseWebHunterModel();
-        model.setModelName("HW9");
-        model.setModelUrl("https://huangwang9.xyz");
-        model.setModelVersion("19.10.17");
+        model.setModelName("天噜啦");
+        model.setModelUrl("http://www.tlula209.com");
+        model.setModelVersion("19.10.18");
         model.setRequestCharset("utf-8");
         model.setResultCharset("utf-8");
-        model.setRuleResult("<li class=\"p1 m1 \">[\\s\\S]*?<p class=\"other\">");
-        model.setRuleResultCover("data-original=\"(.*?)\"");
+        model.setRuleResult("<li>[\\s\\S]*?</li>");
+        model.setRuleResultCover("<img src=\"(.*?)\" />");
         model.setRuleResultLinkHeader("parent");
         model.setRuleResultLink("href=\"(.*?)\"");
-        model.setRuleResultTitle("<p class=\"name\">(.*?)</p>");
-        model.setRuleResultDate("<p class=\"actor\">(\\S{3,})</p>");
+        model.setRuleResultTitle("<h3>(.*?)</h3>");
+        model.setRuleResultDate("(\\d{4}-\\d{2}-\\d{2})");
         model.setHasDetailPage(true);
 
         BaseParseUrlModel baseParseUrlModel = new BaseParseUrlModel();
-        baseParseUrlModel.setRuleFull("<source src=\".*?\" type=\"video/mp4\" label=\".*?\" res=\".*?\" />");
-        baseParseUrlModel.setRuleUrl("<source src=\"(.*?)\"");
-        baseParseUrlModel.setRuleUrl("label=\"(.*?)\"");
+        baseParseUrlModel.setRuleFull("\"playurls\":\\[\\[\".*?\",\".*?\",\".*?\"\\]\\]\\}");
+        baseParseUrlModel.setRuleUrl("(http:.*?.m3u8)");
+        model.setBaseParseUrlModel(baseParseUrlModel);
 
         model.setTabModels(Arrays.asList(
-                new TabModel("大地", "/index.php/vod/type/id/64/page/%page.html"),
-                new TabModel("6969", "/index.php/vod/type/id/55/page/%page.html"),
-                new TabModel("辣椒", "/index.php/vod/type/id/33/page/%page.html"),
-                new TabModel("色色", "/index.php/vod/type/id/20/page/%page.html"),
-                new TabModel("880", "/index.php/vod/type/id/880/page/%page.html"),
-                new TabModel("先锋", "/index.php/vod/type/id/109/page/%page.html"),
-                new TabModel("影院", "/index.php/vod/type/id/134/page/%page.html"))
+                new TabModel("日韩女优", "/vodlist/5%first/%page.html","-"),
+                new TabModel("欧美激情", "/vodlist/6%first/%page.html","-"),
+                new TabModel("偷拍自拍", "/vodlist/4%first/%page.html","-"),
+                new TabModel("成人动漫", "/vodlist/8%first/%page.html","-"),
+                new TabModel("经典三级", "/vodlist/7%first/%page.html","-"),
+                new TabModel("强奸乱伦", "/vodlist/9%first/%page.html","-"),
+                new TabModel("变态另类", "/vodlist/10%first/%page.html","-"),
+                new TabModel("制服丝袜", "/vodlist/11%first/%page.html","-"),
+                new TabModel("激情3P", "/vodlist/12%first/%page.html","-"),
+                new TabModel("中文字幕", "/vodlist/31%firs/t%page.html","-")
+                )
         );
         return model;
     }
 
-    public static String readAssetsTxt(Context context, String fileName){
+    public static String readAssetsTxt(Context context, String fileName) {
         try {
             //Return an AssetManager instance for your application's package
             InputStream is = context.getAssets().open(fileName);

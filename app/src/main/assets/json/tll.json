@@ -1,0 +1,67 @@
+{
+  "modelName": "天噜啦",
+  "modelUrl": "http:\/\/www.tlula209.com",
+  "modelVersion": "19.10.18",
+  "requestCharset": "utf-8",
+  "resultCharset": "utf-8",
+  "ruleResult": "<li>[\\s\\S]*?<\/li>",
+  "ruleResultCover": "<img src=\"(.*?)\" \/>",
+  "ruleResultTitle": "<h3>(.*?)<\/h3>",
+  "ruleResultLinkHeader": "parent",
+  "ruleResultLink": "href=\"(.*?)\"",
+  "ruleResultDate": "(\\d{4}-\\d{2}-\\d{2})",
+  "hasDetailPage": true,
+  "parseModel": "{\"ruleFull\":\"\\\"playurls\\\":\\\\[\\\\[\\\".*?\\\",\\\".*?\\\",\\\".*?\\\"\\\\]\\\\]\\\\}\",\"ruleUrl\":\"(http:.*?.m3u8)\"}",
+  "tabModels": [
+    {
+      "title": "日韩女优",
+      "url": "\/vodlist\/5%first\/%page.html",
+      "first": "-"
+    },
+    {
+      "title": "欧美激情",
+      "url": "\/vodlist\/6%first\/%page.html",
+      "first": "-"
+    },
+    {
+      "title": "偷拍自拍",
+      "url": "\/vodlist\/4%first\/%page.html",
+      "first": "-"
+    },
+    {
+      "title": "成人动漫",
+      "url": "\/vodlist\/8%first\/%page.html",
+      "first": "-"
+    },
+    {
+      "title": "经典三级",
+      "url": "\/vodlist\/7%first\/%page.html",
+      "first": "-"
+    },
+    {
+      "title": "强奸乱伦",
+      "url": "\/vodlist\/9%first\/%page.html",
+      "first": "-"
+    },
+    {
+      "title": "变态另类",
+      "url": "\/vodlist\/10%first\/%page.html",
+      "first": "-"
+    },
+    {
+      "title": "制服丝袜",
+      "url": "\/vodlist\/11%first\/%page.html",
+      "first": "-"
+    },
+    {
+      "title": "激情3P",
+      "url": "\/vodlist\/12%first\/%page.html",
+      "first": "-"
+    },
+    {
+      "title": "中文字幕",
+      "url": "\/vodlist\/31%firs\/t%page.html",
+      "first": "-"
+    }
+  ]
+}

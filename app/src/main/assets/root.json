@@ -1,7 +1,16 @@
 {
-  "list": [
+  "tools": [
     {
-      "AV淘宝": "/json/avtb.json"
+      "toolName": "AV淘宝",
+      "toolVersion": "2019.10.18",
+      "toolUrl": "test/avtb.json",
+      "toolCover": "http://img.cwq.com/201708/1503328120626479.jpeg"
+    },
+    {
+      "toolName": "天噜啦",
+      "toolVersion": "2019.10.18",
+      "toolUrl": "test/tll.json",
+      "toolCover": "http://img.cwq.com/201708/1503328120626479.jpeg"
     }
   ]
 }

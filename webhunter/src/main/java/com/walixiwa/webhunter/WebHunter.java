@@ -40,7 +40,7 @@ public class WebHunter {
         String url;
         if (page == 1) {
             if (!TextUtils.isEmpty(tabModel.getFirst())) {
-                url = hunterModel.getModelUrl() + tabModel.getTabUrl().replace("%first/", "").replace("%page/", "");
+                url = hunterModel.getModelUrl() + tabModel.getTabUrl().replace("%first/", "").replace("%page/", "").replace("%page", "");
             } else {
                 url = hunterModel.getModelUrl() + tabModel.getTabUrl().replace("%page", String.valueOf(page));
             }
