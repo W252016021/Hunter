@@ -88,7 +88,7 @@ public class WebHunter {
                         url = header + matchString(result, hunterModel.getRuleResultLink());
                     }
                 }
-                resultModel.setResultLink(url);
+                resultModel.setResultLink(url.replaceAll("\\s", "%20"));
             }
             if (!TextUtils.isEmpty(hunterModel.getRuleResultDate())) {
                 resultModel.setResultDate(matchString(result, hunterModel.getRuleResultDate()));
