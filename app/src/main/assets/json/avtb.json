@@ -1,0 +1,196 @@
+{
+  "modelName": "AV淘宝",
+  "modelUrl": "http:\/\/www.avtb0055.com",
+  "modelVersion": "19.10.15",
+  "requestCharset": "utf-8",
+  "resultCharset": "utf-8",
+  "ruleResult": "<li id=\"video-.*?\">[\\s\\S]*?<\/div>\n\t\t\t\t\t<\/li>",
+  "ruleResultCover": "<img src=\"(.*?)\"",
+  "ruleResultDate": "<span class=\"pull-left\">(.*?)<\/span>",
+  "ruleResultLinkHeader": "parent",
+  "ruleResultLink": "<a href=\"(.*?)\"",
+  "hasDetailPage": true,
+  "parseModel": "{\"ruleFull\":\"<source src=\\\".*?\\\" type=\\\"video\\\/mp4\\\" label=\\\".*?\\\" res=\\\".*?\\\" \\\/>\",\"ruleTitle\":\"label=\\\"(.*?)\\\"\",\"ruleUrl\":\"<source src=\\\"(.*?)\\\"\"}",
+  "tabModels": [
+    {
+      "title": "亚洲",
+      "url": "\/asian\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "重口",
+      "url": "\/awesome\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "少女",
+      "url": "\/babe\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "潮吹",
+      "url": "\/chaochui\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "大屌",
+      "url": "\/dadiao\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "长视频",
+      "url": "\/duration\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "口爆颜射",
+      "url": "\/facial\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "肛交",
+      "url": "\/gangjiao\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "国产",
+      "url": "\/guochan\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "HD高清",
+      "url": "\/hd\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "户外",
+      "url": "\/huwai\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "巨乳",
+      "url": "\/juru\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "口交  ",
+      "url": "\/koujiao\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "乱伦",
+      "url": "\/luanlun\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "美女",
+      "url": "\/meinv\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "女同",
+      "url": "\/nvtong\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "欧美",
+      "url": "\/oumei\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "性派对",
+      "url": "\/party\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "器具及自慰",
+      "url": "\/qiju\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "群交",
+      "url": "\/qunjiao\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "强奸",
+      "url": "\/rapping\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "人妻熟女",
+      "url": "\/renqi\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "日本无码",
+      "url": "\/ribenwuma\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "日本有码",
+      "url": "\/ribenyouma\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "学生妹 校园",
+      "url": "\/schoolgirl\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "性爱",
+      "url": "\/sex\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "丝袜",
+      "url": "\/siwa\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "SM调教",
+      "url": "\/sm\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "中文字幕",
+      "url": "\/subtitle\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "素人",
+      "url": "\/suren\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "3P",
+      "url": "\/threesome\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "动漫无码",
+      "url": "\/wuma\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "动漫有码",
+      "url": "\/youma\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "制服诱惑",
+      "url": "\/zhifu\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "主播",
+      "url": "\/zhubo\/%first\/%page\/",
+      "first": "recent\/"
+    },
+    {
+      "title": "足交",
+      "url": "\/zujiao\/%first\/%page\/",
+      "first": "recent\/"
+    }
+  ]
+}
