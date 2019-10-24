@@ -4,19 +4,36 @@
       "toolName": "环亚无码",
       "toolVersion": "2019.10.18",
       "toolUrl": "test/hywm.json",
-      "toolCover": "https://b-ssl.duitang.com/uploads/item/201901/11/2019011191254_JCajy.thumb.700_0.jpeg"
+      "toolCover": "https://ps.ssl.qhmsg.com/bdr/300_115_/t0162d103d5d506158f.jpg",
+      "need":"1"
     },
     {
       "toolName": "AV淘宝",
       "toolVersion": "2019.10.18",
       "toolUrl": "test/avtb.json",
-      "toolCover": "http://img.cwq.com/201708/1503328120626479.jpeg"
+      "toolCover": "https://p5.ssl.qhimgs1.com/sdr/400__/t01ec3bf8a38b10d54f.png",
+      "need":"1"
     },
     {
       "toolName": "天噜啦",
       "toolVersion": "2019.10.18",
       "toolUrl": "test/tll.json",
-      "toolCover": "http://img.cwq.com/201708/1503328120626479.jpeg"
+      "toolCover": "https://p1.ssl.qhimgs1.com/dmfd/244_158_/t01f72e4f253e803ad1.jpg",
+      "need":"1"
+    },
+    {
+      "toolName": "蝌蚪窝",
+      "toolVersion": "2019.10.18",
+      "toolUrl": "test/kdw.json",
+      "toolCover": "https://p0.ssl.qhimgs1.com/sdr/400__/t01f0aba655f968415e.png",
+      "need":"1"
+    },
+    {
+      "toolName": "8X在线",
+      "toolVersion": "2019.10.18",
+      "toolUrl": "test/8x.json",
+      "toolCover": "https://p1.ssl.qhimgs1.com/sdr/400__/t01f92c984771f8cf91.jpg",
+      "need":"1"
     }
   ]
 }

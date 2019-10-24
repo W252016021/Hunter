@@ -1,0 +1,48 @@
+{
+  "modelName": "蝌蚪资源",
+  "modelUrl": "http:\/\/www.caca033.com",
+  "modelVersion": "19.10.18",
+  "requestCharset": "utf-8",
+  "resultCharset": "utf-8",
+  "ruleResult": "<div class=\"item[\\s\\S]*?<div class=\"views\">",
+  "ruleResultCover": "data-original=\"(.*?)\"",
+  "ruleResultTitle": "title=\"(.*?)\" >",
+  "ruleResultLink": "<a href=\"(.*?)\"",
+  "ruleResultDate": "<div class=\"added\">(.*?)<\/div>",
+  "hasDetailPage": true,
+  "parseModel": "{\"ruleFull\":\"video_url: '.*?'\",\"ruleUrl\":\"video_url: '(.*?)'\"}",
+  "tabModels": [
+    {
+      "title": "欧美",
+      "url": "\/categories\/265bf8ab0e0507b1f769720fbd07987e\/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"
+    },
+    {
+      "title": "乱伦",
+      "url": "\/categories\/68d1e8dcdaf8ebd5c4fe96ee5b6a9a6c\/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"
+    },
+    {
+      "title": "口交肛交",
+      "url": "\/categories\/6733a683955cdfbbf25939e6bafaf821\/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"
+    },
+    {
+      "title": "中文字幕",
+      "url": "\/categories\/390e6a5d67423d91d7f7bd1642db5e7b\/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"
+    },
+    {
+      "title": "高清",
+      "url": "\/categories\/49ccc25ccd43331cc4b3d841ed3d4022\/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"
+    },
+    {
+      "title": "素人妻",
+      "url": "\/categories\/cdd610c35ff9e81ddd7af9f086fecc0e\/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"
+    },
+    {
+      "title": "日韩",
+      "url": "\/categories\/2ecc21991dfdbe500adc4747d58ca8bd\/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"
+    },
+    {
+      "title": "无码",
+      "url": "\/categories\/73d4bfed3fcf5ea19aea2be948163b46\/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"
+    }
+  ]
+}

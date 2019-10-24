@@ -1,0 +1,41 @@
+{
+  "modelName": "8X在线",
+  "modelUrl": "https:\/\/8xxa9.com",
+  "modelVersion": "19.10.18",
+  "requestCharset": "utf-8",
+  "resultCharset": "utf-8",
+  "ruleResult": "<div class=\"t_p\">[\\s\\S]*?<div class=\"clear\">",
+  "ruleResultCover": "data-original=\"(.*?)\"",
+  "ruleResultTitle": "noreferrer\">(.*?)<\/a>",
+  "ruleResultLinkHeader": "parent",
+  "ruleResultLink": "<a href=\"(.*?)\"",
+  "ruleResultDate": "<span>(\\d{4}年\\d{2}月\\d{1,2}日)<\/span>",
+  "hasDetailPage": true,
+  "parseModel": "{\"ruleFull\":\"<div class=\\\"x_z\\\"><a href=\\\".*?\\\"\",\"ruleUrl\":\"<div class=\\\"x_z\\\"><a href=\\\"(.*?)\\\"\"}",
+  "tabModels": [
+    {
+      "title": "大陆",
+      "url": "\/html\/category\/video\/video1\/page_%page.html"
+    },
+    {
+      "title": "日韩",
+      "url": "\/html\/category\/video\/video2\/page_%page.html"
+    },
+    {
+      "title": "欧美",
+      "url": "\/html\/category\/video\/video3\/page_%page.html"
+    },
+    {
+      "title": "动画",
+      "url": "\/html\/category\/video\/video4\/page_%page.html"
+    },
+    {
+      "title": "三级",
+      "url": "\/html\/category\/video\/video5\/page_%page.html"
+    },
+    {
+      "title": "8X红人",
+      "url": "\/html\/8xhongren_20419_%page.html"
+    }
+  ]
+}

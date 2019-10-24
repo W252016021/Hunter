@@ -178,10 +178,10 @@ public class MainActivity extends AppCompatActivity {
         BaseWebHunterModel model = new BaseWebHunterModel();
         model.setModelName("环亚无码");
         model.setModelUrl("https://api.gtvbb0x.com");
-        model.setModelVersion("19.10.18");
+        model.setModelVersion("19.10.24");
         model.setRequestCharset("utf-8");
         model.setResultCharset("utf-8");
-        model.setRuleResult("\\{\"id\":[\\s\\S]*?content\":\"\"\\}");
+        model.setRuleResult("\\{\"id\":[\\s\\S]*?content\":\".*?\"\\}");
         model.setRuleResultCover("pic\":\"(.*?)\"");
         model.setRuleResultLinkHeader("https://api.gtvbb0x.com/Videos/Get?vid=");
         model.setRuleResultLink("\"id\":\"(.*?)\"");
@@ -204,25 +204,67 @@ public class MainActivity extends AppCompatActivity {
         return model;
     }
 
-    public static String readAssetsTxt(Context context, String fileName) {
-        try {
-            //Return an AssetManager instance for your application's package
-            InputStream is = context.getAssets().open(fileName);
-            int size = is.available();
-            // Read the entire asset into a local byte buffer.
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            // Convert the buffer into a string.
-            String text = new String(buffer, "utf-8");
-            // Finally stick the string into the text view.
-            return text;
-        } catch (IOException e) {
-            // Should never happen!
-//            throw new RuntimeException(e);
-            e.printStackTrace();
-        }
-        return "读取错误，请检查文件名";
+    private BaseWebHunterModel getModel4() {
+        BaseWebHunterModel model = new BaseWebHunterModel();
+        model.setModelName("蝌蚪窝");
+        model.setModelUrl("http://www.caca033.com");
+        model.setModelVersion("19.10.18");
+        model.setRequestCharset("utf-8");
+        model.setResultCharset("utf-8");
+        model.setRuleResult("<div class=\"item[\\s\\S]*?<div class=\"views\">");
+        model.setRuleResultCover("data-original=\"(.*?)\"");
+        model.setRuleResultLink("<a href=\"(.*?)\"");
+        model.setRuleResultTitle("title=\"(.*?)\" >");
+        model.setRuleResultDate("<div class=\"added\">(.*?)</div>");
+        model.setHasDetailPage(true);
+
+        BaseParseUrlModel baseParseUrlModel = new BaseParseUrlModel();
+        baseParseUrlModel.setRuleFull("video_url: '.*?'");
+        baseParseUrlModel.setRuleUrl("video_url: '(.*?)'");
+        model.setBaseParseUrlModel(baseParseUrlModel);
+
+        model.setTabModels(Arrays.asList(
+                new TabModel("欧美", "/categories/265bf8ab0e0507b1f769720fbd07987e/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"),
+                new TabModel("乱伦", "/categories/68d1e8dcdaf8ebd5c4fe96ee5b6a9a6c/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"),
+                new TabModel("口交肛交", "/categories/6733a683955cdfbbf25939e6bafaf821/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"),
+                new TabModel("中文字幕", "/categories/390e6a5d67423d91d7f7bd1642db5e7b/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"),
+                new TabModel("高清", "/categories/49ccc25ccd43331cc4b3d841ed3d4022/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"),
+                new TabModel("素人妻", "/categories/cdd610c35ff9e81ddd7af9f086fecc0e/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"),
+                new TabModel("日韩", "/categories/2ecc21991dfdbe500adc4747d58ca8bd/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page"),
+                new TabModel("无码", "/categories/73d4bfed3fcf5ea19aea2be948163b46/?mode=async&function=get_block&block_id=list_videos_common_videos_list&sort_by=post_date&from=%page")
+        ));
+        return model;
+    }
+
+    private BaseWebHunterModel getModel5() {
+        BaseWebHunterModel model = new BaseWebHunterModel();
+        model.setModelName("8X在线");
+        model.setModelUrl("https://8xxa9.com");
+        model.setModelVersion("19.10.18");
+        model.setRequestCharset("utf-8");
+        model.setResultCharset("utf-8");
+        model.setRuleResult("<div class=\"t_p\">[\\s\\S]*?<div class=\"clear\">");
+        model.setRuleResultCover("data-original=\"(.*?)\"");
+        model.setRuleResultLinkHeader("parent");
+        model.setRuleResultLink("<a href=\"(.*?)\"");
+        model.setRuleResultTitle("noreferrer\">(.*?)</a>");
+        model.setRuleResultDate("<span>(\\d{4}年\\d{2}月\\d{1,2}日)</span>");
+        model.setHasDetailPage(true);
+
+        BaseParseUrlModel baseParseUrlModel = new BaseParseUrlModel();
+        baseParseUrlModel.setRuleFull("<div class=\"x_z\"><a href=\".*?\"");
+        baseParseUrlModel.setRuleUrl("<div class=\"x_z\"><a href=\"(.*?)\"");
+        model.setBaseParseUrlModel(baseParseUrlModel);
+
+        model.setTabModels(Arrays.asList(
+                new TabModel("大陆", "/html/category/video/video1/page_%page.html"),
+                new TabModel("日韩", "/html/category/video/video2/page_%page.html"),
+                new TabModel("欧美", "/html/category/video/video3/page_%page.html"),
+                new TabModel("动画", "/html/category/video/video4/page_%page.html"),
+                new TabModel("三级", "/html/category/video/video5/page_%page.html"),
+                new TabModel("8X红人", "/html/8xhongren_20419_%page.html")
+        ));
+        return model;
     }
 
 }

@@ -231,6 +231,9 @@ public class BaseWebHunterModel implements Serializable {
             if (jsonObject.has("ruleResultExtra2")) {
                 this.ruleResultExtra2 = jsonObject.getString("ruleResultExtra2");
             }
+            if (jsonObject.has("hasDetailPage")) {
+                this.hasDetailPage = jsonObject.getBoolean("hasDetailPage");
+            }
             if (jsonObject.has("parseModel")) {
                 this.hasDetailPage = true;
                 BaseParseUrlModel parseUrlModel = new BaseParseUrlModel(jsonObject.getString("parseModel"));
