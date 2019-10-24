@@ -235,7 +235,6 @@ public class BaseWebHunterModel implements Serializable {
                 this.hasDetailPage = jsonObject.getBoolean("hasDetailPage");
             }
             if (jsonObject.has("parseModel")) {
-                this.hasDetailPage = true;
                 BaseParseUrlModel parseUrlModel = new BaseParseUrlModel(jsonObject.getString("parseModel"));
                 if (parseUrlModel.getBaseUrl() != null) {
                     if (parseUrlModel.getBaseUrl().equals("parent")) {
@@ -295,9 +294,8 @@ public class BaseWebHunterModel implements Serializable {
             if (!TextUtils.isEmpty(ruleResultExtra2)) {
                 jsonObject.put("ruleResultExtra2", this.ruleResultExtra2);
             }
+            jsonObject.put("hasDetailPage", true);
             if (this.hasDetailPage) {
-                jsonObject.put("hasDetailPage", true);
-
                 jsonObject.put("parseModel", this.baseParseUrlModel.toJsonObject().toString());
             }
             JSONArray jsonArray = new JSONArray();
