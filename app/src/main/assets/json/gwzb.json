@@ -1,0 +1,33 @@
+{
+  "modelName": "国外直播",
+  "modelUrl": "https:\/\/chaturbate.global",
+  "modelVersion": "2019.10.25",
+  "requestCharset": "utf-8",
+  "resultCharset": "utf-8",
+  "ruleResult": "<li class=\"room_list_room\">[\\s\\S]*?viewers<\/li>",
+  "ruleResultCover": "<img src=\"(.*?)\"",
+  "ruleResultTitle": "data-slug=\"(.*?)\"",
+  "ruleResultLinkHeader": "parent",
+  "ruleResultLink": "<a href=\"(.*?)\">[\\s\\S]*?<img src",
+  "ruleResultDate": "<li class=\"cams\">(.*?)<\/li>",
+  "hasDetailPage": true,
+  "parseModel": "{\"ruleFull\":\"<source src='.*?' type='\",\"ruleUrl\":\"<source src='(.*?)' type='\"}",
+  "tabModels": [
+    {
+      "title": "FEMALE",
+      "url": "\/female-cams\/?page=%page"
+    },
+    {
+      "title": "MALE",
+      "url": "\/male-cams\/?page=%page"
+    },
+    {
+      "title": "COUPLE",
+      "url": "\/couple-cams\/?page=%page"
+    },
+    {
+      "title": "TRANS",
+      "url": "\/trans-cams\/?page=%page"
+    }
+  ]
+}

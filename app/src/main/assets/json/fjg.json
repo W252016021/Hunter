@@ -1,0 +1,95 @@
+{
+  "modelName": "飞机馆",
+  "modelUrl": "http:\/\/cj.fjgzycj.com",
+  "modelVersion": "2019.10.25",
+  "requestCharset": "utf-8",
+  "resultCharset": "utf-8",
+  "ruleResult": "\\{\"vod_id\":[\\s\\S]*?type_name.*?\\}",
+  "ruleResultCover": "vod_pic\":\"(.*?)\"",
+  "ruleResultTitle": "vod_name\":\"(.*?)\"",
+  "ruleResultLink": "vod_play_url\":\".*?\\$(.*?)\"",
+  "ruleResultDate": "vod_time\":\"(.*?)\"",
+  "hasDetailPage": true,
+  "tabModels": [
+    {
+      "title": "韩国直播",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=3&pg=%page"
+    },
+    {
+      "title": "动漫卡通",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=4&pg=%page"
+    },
+    {
+      "title": "网曝热门",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=6&pg=%page"
+    },
+    {
+      "title": "制服诱惑",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=7&pg=%page"
+    },
+    {
+      "title": "网红直播",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=8&pg=%page"
+    },
+    {
+      "title": "空姐模特",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=9&pg=%page"
+    },
+    {
+      "title": "自拍偷拍",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=10&pg=%page"
+    },
+    {
+      "title": "学生萝莉",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=11&pg=%page"
+    },
+    {
+      "title": "美熟少妇",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=12&pg=%page"
+    },
+    {
+      "title": "中文字幕",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=13&pg=%page"
+    },
+    {
+      "title": "日本有码",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=14&pg=%page"
+    },
+    {
+      "title": "日本无码",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=15&pg=%page"
+    },
+    {
+      "title": "欧美情色",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=16&pg=%page"
+    },
+    {
+      "title": "香港三级",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=33&pg=%page"
+    },
+    {
+      "title": "国产精品",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=34&pg=%page"
+    },
+    {
+      "title": "抖阴视频",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=35&pg=%page"
+    },
+    {
+      "title": "国产乱伦",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=36&pg=%page"
+    },
+    {
+      "title": "野合车震",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=37&pg=%page"
+    },
+    {
+      "title": "职场同事",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=38&pg=%page"
+    },
+    {
+      "title": "自慰群交",
+      "url": "\/api.php\/provide\/vod\/at\/json\/?ac=videolist&t=39&pg=%page"
+    }
+  ]
+}

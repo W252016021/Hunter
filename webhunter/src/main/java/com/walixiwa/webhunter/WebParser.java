@@ -112,7 +112,7 @@ public class WebParser {
         while (matcher.find()) {
             result = matcher.group(1);
         }
-        return result == null ? "" : result.replaceAll("<.*?>", "").replaceAll("\\s", "").trim();
+        return WebTool.decodeUnicode(result == null ? "" : result.replaceAll("<.*?>", "").replaceAll("\\s", "").trim());
     }
 
     private CallBack callBack;

@@ -1,37 +1,35 @@
 {
   "modelName": "环亚无码",
-  "modelUrl": "https:\/\/api.gtvbb0x.com",
-  "modelVersion": "19.10.18",
+  "modelUrl": "http:\/\/wmcj8.com",
+  "modelVersion": "2019.10.25",
   "requestCharset": "utf-8",
   "resultCharset": "utf-8",
-  "ruleResult": "\\{\"id\":[\\s\\S]*?content\":\"\"\\}",
-  "ruleResultCover": "pic\":\"(.*?)\"",
-  "ruleResultTitle": "title\":\"(.*?)\"",
-  "ruleResultLinkHeader": "https:\/\/api.gtvbb0x.com\/Videos\/Get?vid=",
-  "ruleResultLink": "\"id\":\"(.*?)\"",
-  "ruleResultDate": "hits\":\"(.*?)\"",
+  "ruleResult": "\\{\"vod_id\":[\\s\\S]*?content\":\".*?\"\\}",
+  "ruleResultCover": "vod_pic\":\"(.*?)\"",
+  "ruleResultTitle": "vod_title\":\"(.*?)\"",
+  "ruleResultLink": "vpath\":\".*?\\$(.*?)\\$ckplayer\"",
+  "ruleResultDate": "vod_addtime\":\"(.*?)\"",
   "hasDetailPage": true,
-  "parseModel": "{\"ruleFull\":\"vurl\\\":\\\".*?\\\"\",\"ruleUrl\":\"vurl\\\":\\\"(.*?)\\\"\"}",
   "tabModels": [
     {
       "title": "乱伦无码",
-      "url": "\/videos\/GetVideoList?cvid=2&page=%page&pagesize=20"
+      "url": "\/inc\/jsonsapi.php?ac=videolist&t=2&pg=%page"
     },
     {
       "title": "强奸无码",
-      "url": "\/videos\/GetVideoList?cvid=3&page=%page&pagesize=20"
+      "url": "\/inc\/jsonsapi.php?ac=videolist&t=3&pg=%page"
     },
     {
       "title": "人妻无码",
-      "url": "\/videos\/GetVideoList?cvid=4&page=%page&pagesize=20"
+      "url": "\/inc\/jsonsapi.php?ac=videolist&t=4&pg=%page"
     },
     {
       "title": "制服无码",
-      "url": "\/videos\/GetVideoList?cvid=5&page=%page&pagesize=20"
+      "url": "\/inc\/jsonsapi.php?ac=videolist&t=5&pg=%page"
     },
     {
       "title": "巨乳无码",
-      "url": "\/videos\/GetVideoList?cvid=12&page=%page&pagesize=20"
+      "url": "\/inc\/jsonsapi.php?ac=videolist&t=12&pg=%page"
     }
   ]
 }

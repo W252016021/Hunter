@@ -50,18 +50,19 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mTextViewJson.setText(getModel3().toJson());
-                Log.e(TAG, "onClick: " + getModel3().toJson());
+                mTextViewJson.setText(getModel7().toJson());
+                Log.e(TAG, "onClick: " + getModel7().toJson());
 
-                BaseWebHunterModel hunterModel = new BaseWebHunterModel(getModel3().toJson());
+                BaseWebHunterModel hunterModel = new BaseWebHunterModel(getModel7().toJson());
                 new WebHunter().init(hunterModel).setCallBack(new WebHunter.CallBack() {
                     @Override
                     public void callBack(BaseWebHunterModel h, List<BaseWebResultModel> resultModels) {
+                        Log.e(TAG, "size: " + resultModels.size());
                         for (int i = 0; i < resultModels.size(); i++) {
                             Log.e(TAG, "callBack: " + resultModels.get(i).toString());
                         }
                     }
-                }).with(2, 0).start();
+                }).with(2, 2).start();
             }
         });
     }
@@ -177,29 +178,23 @@ public class MainActivity extends AppCompatActivity {
     private BaseWebHunterModel getModel3() {
         BaseWebHunterModel model = new BaseWebHunterModel();
         model.setModelName("环亚无码");
-        model.setModelUrl("https://api.gtvbb0x.com");
-        model.setModelVersion("19.10.24");
+        model.setModelUrl("http://wmcj8.com");
+        model.setModelVersion("2019.10.25");
         model.setRequestCharset("utf-8");
         model.setResultCharset("utf-8");
-        model.setRuleResult("\\{\"id\":[\\s\\S]*?content\":\".*?\"\\}");
-        model.setRuleResultCover("pic\":\"(.*?)\"");
-        model.setRuleResultLinkHeader("https://api.gtvbb0x.com/Videos/Get?vid=");
-        model.setRuleResultLink("\"id\":\"(.*?)\"");
-        model.setRuleResultTitle("title\":\"(.*?)\"");
-        model.setRuleResultDate("hits\":\"(.*?)\"");
-        model.setHasDetailPage(true);
-
-        BaseParseUrlModel baseParseUrlModel = new BaseParseUrlModel();
-        baseParseUrlModel.setRuleFull("vurl\":\".*?\"");
-        baseParseUrlModel.setRuleUrl("vurl\":\"(.*?)\"");
-        model.setBaseParseUrlModel(baseParseUrlModel);
+        model.setRuleResult("\\{\"vod_id\":[\\s\\S]*?content\":\".*?\"\\}");
+        model.setRuleResultCover("vod_pic\":\"(.*?)\"");
+        model.setRuleResultLink("vpath\":\".*?\\$(.*?)\\$ckplayer\"");
+        model.setRuleResultTitle("vod_title\":\"(.*?)\"");
+        model.setRuleResultDate("vod_addtime\":\"(.*?)\"");
+        model.setHasDetailPage(false);
 
         model.setTabModels(Arrays.asList(
-                new TabModel("乱伦无码", "/videos/GetVideoList?cvid=2&page=%page&pagesize=20"),
-                new TabModel("强奸无码", "/videos/GetVideoList?cvid=3&page=%page&pagesize=20"),
-                new TabModel("人妻无码", "/videos/GetVideoList?cvid=4&page=%page&pagesize=20"),
-                new TabModel("制服无码", "/videos/GetVideoList?cvid=5&page=%page&pagesize=20"),
-                new TabModel("巨乳无码", "/videos/GetVideoList?cvid=12&page=%page&pagesize=20")
+                new TabModel("乱伦无码", "/inc/jsonsapi.php?ac=videolist&t=2&pg=%page"),
+                new TabModel("强奸无码", "/inc/jsonsapi.php?ac=videolist&t=3&pg=%page"),
+                new TabModel("人妻无码", "/inc/jsonsapi.php?ac=videolist&t=4&pg=%page"),
+                new TabModel("制服无码", "/inc/jsonsapi.php?ac=videolist&t=5&pg=%page"),
+                new TabModel("巨乳无码", "/inc/jsonsapi.php?ac=videolist&t=12&pg=%page")
         ));
         return model;
     }
@@ -267,4 +262,166 @@ public class MainActivity extends AppCompatActivity {
         return model;
     }
 
+
+    private BaseWebHunterModel getModel6() {
+        BaseWebHunterModel model = new BaseWebHunterModel();
+        model.setModelName("四虎在线");
+        model.setModelUrl("https://www.8754hu.com");
+        model.setModelVersion("2019.10.25");
+        model.setRequestCharset("utf-8");
+        model.setResultCharset("utf-8");
+        model.setRuleResult("<li class=\"col-md-2 col-sm-3 col-xs-4\">[\\s\\S]*?</li>");
+        model.setRuleResultCover("data-original=\"(.*?)\"");
+        model.setRuleResultLinkHeader("parent");
+        model.setRuleResultLink("href=\"(.*?)\"");
+        model.setRuleResultTitle("title=\"(.*?)\"");
+        model.setRuleResultDate("(\\d{4}-\\d{2}-\\d{2})");
+        model.setHasDetailPage(true);
+
+        BaseParseUrlModel baseParseUrlModel = new BaseParseUrlModel();
+        baseParseUrlModel.setBaseUrl("https://www.8754hu.com");
+        baseParseUrlModel.setSubUrl("/vod/html%param2/%param1_down_0.html");
+        baseParseUrlModel.setRuleParam1("/vod/html.*?/(.*?).html");
+        baseParseUrlModel.setRuleParam2("/vod/html(.*?)/");
+        baseParseUrlModel.setRuleFull("var httpurl = \".*?\"");
+        baseParseUrlModel.setRuleUrl("var httpurl = \"(.*?)\"");
+        model.setBaseParseUrlModel(baseParseUrlModel);
+
+        model.setTabModels(Arrays.asList(
+                new TabModel("欧美性爱", "/vod/html27/index%first/%page.html", "_"),
+                new TabModel("自拍偷拍", "/vod/html2/index%first/%page.html", "_"),
+                new TabModel("夫妻同房", "/vod/html3/index%first/%page.html", "_"),
+                new TabModel("开放90后", "/vod/html4/index%first/%page.html", "_"),
+                new TabModel("换妻游戏", "/vod/html5/index%first/%page.html", "_"),
+                new TabModel("网红主播", "/vod/html6/index%first/%page.html", "_"),
+                new TabModel("手机小视频", "/vod/html7/index%first/%page.html", "_"),
+                new TabModel("经典三级", "/vod/html8/index%first/%page.html", "_"),
+
+                new TabModel("无码中字", "/vod/html10/index%first/%page.html", "_"),
+
+                new TabModel("熟女人妻", "/vod/html11/index%first/%page.html", "_"),
+                new TabModel("美颜巨乳", "/vod/html12/index%first/%page.html", "_"),
+                new TabModel("颜射吃精", "/vod/html13/index%first/%page.html", "_"),
+                new TabModel("丝袜制服", "/vod/html14/index%first/%page.html", "_"),
+                new TabModel("高清无码", "/vod/html15/index%first/%page.html", "_"),
+
+                new TabModel("中文有码", "/vod/html16/index%first/%page.html", "_"),
+
+                new TabModel("宇都宮紫苑", "/vod/html18/index%first/%page.html", "_"),
+                new TabModel("天海翼", "/vod/html19/index%first/%page.html", "_"),
+                new TabModel("水菜麗", "/vod/html20/index%first/%page.html", "_"),
+                new TabModel("泷泽萝拉", "/vod/html21/index%first/%page.html", "_"),
+                new TabModel("S级女优", "/vod/html22/index%first/%page.html", "_"),
+
+                new TabModel("波多野结衣", "/vod/html23/index%first/%page.html", "_"),
+                new TabModel("吉泽明步", "/vod/html24/index%first/%page.html", "_"),
+                new TabModel("苍井空", "/vod/html25/index%first/%page.html", "_")
+        ));
+        return model;
+    }
+
+    private BaseWebHunterModel getModel7() {
+        BaseWebHunterModel model = new BaseWebHunterModel();
+        model.setModelName("国外直播");
+        model.setModelUrl("https://chaturbate.global");
+        model.setModelVersion("2019.11.07");
+        model.setRequestCharset("utf-8");
+        model.setResultCharset("utf-8");
+        model.setRuleResult("<li class=\"room_list_room\">[\\s\\S]*?viewers</li>");
+        model.setRuleResultCover("<img src=\"(.*?)\"");
+        model.setRuleResultLinkHeader("parent");
+        model.setRuleResultLink("<a href=\"(.*?)\">[\\s\\S]*?<img src");
+        model.setRuleResultTitle("data-slug=\"(.*?)\"");
+        model.setRuleResultDate("<li class=\"cams\">(.*?)</li>");
+        model.setHasDetailPage(true);
+
+        BaseParseUrlModel baseParseUrlModel = new BaseParseUrlModel();
+        baseParseUrlModel.setRuleFull("hls_source.*?.m3u8");
+        baseParseUrlModel.setRuleUrl("(http.*?m3u8)");
+        model.setBaseParseUrlModel(baseParseUrlModel);
+
+        model.setTabModels(Arrays.asList(
+                new TabModel("FEMALE", "/female-cams/?page=%page"),
+                new TabModel("MALE", "/male-cams/?page=%page"),
+                new TabModel("COUPLE", "/couple-cams/?page=%page"),
+                new TabModel("TRANS", "/trans-cams/?page=%page")
+        ));
+        return model;
+    }
+
+    private BaseWebHunterModel getModel8() {
+        BaseWebHunterModel model = new BaseWebHunterModel();
+        model.setModelName("飞机馆");
+        model.setModelUrl("http://cj.fjgzycj.com");
+        model.setModelVersion("2019.10.25");
+        model.setRequestCharset("utf-8");
+        model.setResultCharset("utf-8");
+        model.setRuleResult("\\{\"vod_id\":[\\s\\S]*?type_name.*?\\}");
+        model.setRuleResultCover("vod_pic\":\"(.*?)\"");
+        model.setRuleResultLink("vod_play_url\":\".*?\\$(.*?)\"");
+        model.setRuleResultTitle("vod_name\":\"(.*?)\"");
+        model.setRuleResultDate("vod_time\":\"(.*?)\"");
+        model.setHasDetailPage(false);
+        model.setTabModels(Arrays.asList(
+                new TabModel("韩国直播", "/api.php/provide/vod/at/json/?ac=videolist&t=3&pg=%page"),
+                new TabModel("动漫卡通", "/api.php/provide/vod/at/json/?ac=videolist&t=4&pg=%page"),
+                new TabModel("网曝热门", "/api.php/provide/vod/at/json/?ac=videolist&t=6&pg=%page"),
+                new TabModel("制服诱惑", "/api.php/provide/vod/at/json/?ac=videolist&t=7&pg=%page"),
+                new TabModel("网红直播", "/api.php/provide/vod/at/json/?ac=videolist&t=8&pg=%page"),
+                new TabModel("空姐模特", "/api.php/provide/vod/at/json/?ac=videolist&t=9&pg=%page"),
+                new TabModel("自拍偷拍", "/api.php/provide/vod/at/json/?ac=videolist&t=10&pg=%page"),
+                new TabModel("学生萝莉", "/api.php/provide/vod/at/json/?ac=videolist&t=11&pg=%page"),
+                new TabModel("美熟少妇", "/api.php/provide/vod/at/json/?ac=videolist&t=12&pg=%page"),
+                new TabModel("中文字幕", "/api.php/provide/vod/at/json/?ac=videolist&t=13&pg=%page"),
+                new TabModel("日本有码", "/api.php/provide/vod/at/json/?ac=videolist&t=14&pg=%page"),
+                new TabModel("日本无码", "/api.php/provide/vod/at/json/?ac=videolist&t=15&pg=%page"),
+                new TabModel("欧美情色", "/api.php/provide/vod/at/json/?ac=videolist&t=16&pg=%page"),
+                new TabModel("香港三级", "/api.php/provide/vod/at/json/?ac=videolist&t=33&pg=%page"),
+                new TabModel("国产精品", "/api.php/provide/vod/at/json/?ac=videolist&t=34&pg=%page"),
+                new TabModel("抖阴视频", "/api.php/provide/vod/at/json/?ac=videolist&t=35&pg=%page"),
+                new TabModel("国产乱伦", "/api.php/provide/vod/at/json/?ac=videolist&t=36&pg=%page"),
+                new TabModel("野合车震", "/api.php/provide/vod/at/json/?ac=videolist&t=37&pg=%page"),
+                new TabModel("职场同事", "/api.php/provide/vod/at/json/?ac=videolist&t=38&pg=%page"),
+                new TabModel("自慰群交", "/api.php/provide/vod/at/json/?ac=videolist&t=39&pg=%page")
+        ));
+        return model;
+    }
+
+    private BaseWebHunterModel getModel9() {
+        BaseWebHunterModel model = new BaseWebHunterModel();
+        model.setModelName("IX在线");
+        model.setModelUrl("http://api.iixxzyapi.com");
+        model.setModelVersion("2019.10.25");
+        model.setRequestCharset("utf-8");
+        model.setResultCharset("utf-8");
+        model.setRuleResult("<video>[\\s\\S]*?</video>");
+        model.setRuleResultCover("<pic>(.*?)</pic>");
+        model.setRuleResultLink("vod_play_url\":\".*?\\$(.*?)\"");
+        model.setRuleResultTitle("vod_name\":\"(.*?)\"");
+        model.setRuleResultDate("vod_time\":\"(.*?)\"");
+        model.setHasDetailPage(false);
+        model.setTabModels(Arrays.asList(
+                new TabModel("韩国直播", "/api.php/provide/vod/at/json/?ac=videolist&t=3&pg=%page"),
+                new TabModel("动漫卡通", "/api.php/provide/vod/at/json/?ac=videolist&t=4&pg=%page"),
+                new TabModel("网曝热门", "/api.php/provide/vod/at/json/?ac=videolist&t=6&pg=%page"),
+                new TabModel("制服诱惑", "/api.php/provide/vod/at/json/?ac=videolist&t=7&pg=%page"),
+                new TabModel("网红直播", "/api.php/provide/vod/at/json/?ac=videolist&t=8&pg=%page"),
+                new TabModel("空姐模特", "/api.php/provide/vod/at/json/?ac=videolist&t=9&pg=%page"),
+                new TabModel("自拍偷拍", "/api.php/provide/vod/at/json/?ac=videolist&t=10&pg=%page"),
+                new TabModel("学生萝莉", "/api.php/provide/vod/at/json/?ac=videolist&t=11&pg=%page"),
+                new TabModel("美熟少妇", "/api.php/provide/vod/at/json/?ac=videolist&t=12&pg=%page"),
+                new TabModel("中文字幕", "/api.php/provide/vod/at/json/?ac=videolist&t=13&pg=%page"),
+                new TabModel("日本有码", "/api.php/provide/vod/at/json/?ac=videolist&t=14&pg=%page"),
+                new TabModel("日本无码", "/api.php/provide/vod/at/json/?ac=videolist&t=15&pg=%page"),
+                new TabModel("欧美情色", "/api.php/provide/vod/at/json/?ac=videolist&t=16&pg=%page"),
+                new TabModel("香港三级", "/api.php/provide/vod/at/json/?ac=videolist&t=33&pg=%page"),
+                new TabModel("国产精品", "/api.php/provide/vod/at/json/?ac=videolist&t=34&pg=%page"),
+                new TabModel("抖阴视频", "/api.php/provide/vod/at/json/?ac=videolist&t=35&pg=%page"),
+                new TabModel("国产乱伦", "/api.php/provide/vod/at/json/?ac=videolist&t=36&pg=%page"),
+                new TabModel("野合车震", "/api.php/provide/vod/at/json/?ac=videolist&t=37&pg=%page"),
+                new TabModel("职场同事", "/api.php/provide/vod/at/json/?ac=videolist&t=38&pg=%page"),
+                new TabModel("自慰群交", "/api.php/provide/vod/at/json/?ac=videolist&t=39&pg=%page")
+        ));
+        return model;
+    }
 }
